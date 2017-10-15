@@ -1,0 +1,19 @@
+doctype
+head
+	title= page
+	meta(charset = 'utf-8')
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	style
+		|ul.nav a {
+		|text-transform: capitalize;
+		|}
+	body
+		.container
+		h1=page
+		hr
+		ul.nav.nav-pills
+		each link in links
+			li: a(href=link)= link
+		li: a(href='/new') new
+		hr
+		block content
