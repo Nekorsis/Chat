@@ -11,16 +11,12 @@ io.on('connection', function(socket){
     io.emit('connected', "#New User Connected");
  
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    io.broadcast.emit('chat message', msg);
   });
   socket.on('disconnect', function(){
 	console.log('disc');
   });
-  io.clients((error, clients) => {
-  if (error) throw error;
-  console.log(clients); // => [6em3d4TJP8Et9EMNAAAA, G5p55dHhGgUnLUctAAAB]
-});
-  console.log(namespace.name);
+  console.log(socket.id);
 });
 
     
