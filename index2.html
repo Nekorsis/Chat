@@ -19,7 +19,7 @@
 		}
 	});
 	socket.on('message', function(obj){
-		$('#lines').append($('<p>').append($('<b>').text(obj.nickname), obj.text));
+		message((obj.nickname), obj.text));
 	});
 	socket.on('reconnect', function() {
 		$('#lines').remove();
