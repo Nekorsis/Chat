@@ -5,10 +5,12 @@ var http = require('http').Server(app);;
 var io          = require('socket.io')(http);
 var users       = {};
 
+app.use(express.static('./'));
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/chat.html');
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/chat.html');
 });
+
 io.on('connection', function(socket) {
 	io.emit('connect');
 	console.log('Express server listening on port');
