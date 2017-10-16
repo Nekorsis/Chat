@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="index.css">
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -61,23 +62,20 @@
 </script>
 </head>
 <body>
-	<div id="chat">
-		<div id="nickname">
-			<form id="set-nickname" class="wrap">
+	<div class="chat">
+		<div class="nickname">
+			<form class="set-nickname" class="wrap">
 				<p>Please type in your nickname and press enter.</p>
-				<input id="nick">
+				<input class="nick">
 				<button>Send</button>
 			</form>
+		</div> 
+		<div class="messages">
+			<div class="nicknames"></div>
+			<div class="lines"></div>
 		</div>
-		<div id="connecting">
-			<div class="wrap">Connecting to socket.io server</div>
-		</div>
-		<div id="messages">
-			<div id="nicknames"></div>
-			<div id="lines"></div>
-		</div>
-		<form id="send-message">
-			<input id="message">
+		<form class="send-message">
+			<input class="message">
 			<button>Send</button>
 		</form>
 	</div>
